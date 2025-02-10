@@ -10,18 +10,18 @@ set (for interactivity)
 
 # Shapes
 
-circle
-ellipse
-image
-line
-marker
-path
-polygon
-polyline
-rect
-text
-tspan
-textPath
+- [x] circle
+- [x] ellipse
+- [ ] image
+- [ ] line
+- [ ] marker
+- [ ] path
+- [ ] polygon
+- [ ] polyline
+- [ ] rect
+- [ ] text
+- [ ] tspan
+- [ ] textPath
 
 # Containers
 
