@@ -1,9 +1,12 @@
-import { usePlug } from './usePlug'
+import { useLength } from './useLength'
+
+export type SvgCircle = ReturnType<typeof useCircle>
 
 export function useCircle() {
   return {
-    cx: usePlug(new SVGAnimatedLength()),
-    cy: usePlug(new SVGAnimatedLength()),
-    r: usePlug(new SVGAnimatedLength()),
+    is: 'circle' as 'circle',
+    cx: useLength(),
+    cy: useLength(),
+    r: useLength(),
   }
 }

@@ -1,10 +1,14 @@
-import { usePlug } from './usePlug'
+import { useLength } from './useLength'
+import { usePreserveAspectRatio } from './usePreserveAspectRatio'
+
+export type Svg = ReturnType<typeof useSvg>
 
 export function useSvg() {
   return {
-    width: usePlug(new SVGAnimatedLength()),
-    height: usePlug(new SVGAnimatedLength()),
-    viewBox: usePlug(new SVGAnimatedNumberList()),
-    preserveAspectRatio: usePlug(new SVGAnimatedPreserveAspectRatio()),
+    is: 'svg' as 'svg',
+    width: useLength(),
+    height: useLength(),
+    viewBox: useLength(),
+    preserveAspectRatio: usePreserveAspectRatio(),
   }
 }

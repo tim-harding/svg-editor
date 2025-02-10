@@ -1,10 +1,13 @@
-import { usePlug } from './usePlug'
+import { useLength } from './useLength'
 
-export function useCircle() {
+export type SvgEllipse = ReturnType<typeof useEllipse>
+
+export function useEllipse() {
   return {
-    cx: usePlug(new SVGAnimatedLength()),
-    cy: usePlug(new SVGAnimatedLength()),
-    rx: usePlug(new SVGAnimatedLength()),
-    ry: usePlug(new SVGAnimatedLength()),
+    is: 'ellipse' as 'ellipse',
+    cx: useLength(),
+    cy: useLength(),
+    rx: useLength(),
+    ry: useLength(),
   }
 }
