@@ -1,12 +1,10 @@
 import { usePlug } from './usePlug'
 
-export function useImage() {
+export function useSvg() {
   return {
-    x: usePlug(new SVGAnimatedLength()),
-    y: usePlug(new SVGAnimatedLength()),
     width: usePlug(new SVGAnimatedLength()),
     height: usePlug(new SVGAnimatedLength()),
+    viewBox: usePlug(new SVGAnimatedNumberList()),
     preserveAspectRatio: usePlug(new SVGAnimatedPreserveAspectRatio()),
-    href: usePlug(new URL('')),
   }
 }
