@@ -12,7 +12,7 @@ set (for interactivity)
 
 - [x] circle
 - [x] ellipse
-- [ ] image
+- [x] image
 - [ ] line
 - [ ] marker
 - [ ] path
