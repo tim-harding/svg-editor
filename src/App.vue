@@ -1,5 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useSvgDocStore } from './stores/svg-doc-store'
+import { Element } from './components/Element'
 
-<template></template>
+const store = useSvgDocStore()
+</script>
+
+<template>
+  <Element :element="store.svg"></Element>
+</template>
 
 <style module="s"></style>

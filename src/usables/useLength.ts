@@ -4,10 +4,10 @@ export type LengthUnit = '' | '%' | 'em' | 'ex' | 'px' | 'cm' | 'mm' | 'in' | 'p
 
 export function useLength() {
   const unit = ref('' as LengthUnit)
-  const value = ref(0)
+  const magnitude = ref(0)
   return {
     unit,
-    value,
-    asString: computed(() => `${value}${unit}`),
+    magnitude,
+    asAttribute: computed(() => `${magnitude.value}${unit.value}`),
   }
 }

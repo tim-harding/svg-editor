@@ -3,18 +3,21 @@ import { useEllipse, type SvgEllipse } from './useEllipse'
 import { useImage, type SvgImage } from './useImage'
 import { useSvg, type Svg } from './useSvg'
 
-export type SvgTag = SvgProps['is']
-export type SvgProps = Svg | SvgEllipse | SvgCircle | SvgImage
-export type SvgElement = SvgProps & { children: SvgElement[] }
+export type SvgTag = SvgAttributes['is']
+export type SvgAttributes = Svg | SvgEllipse | SvgCircle | SvgImage
+export type SvgElement = {
+  attributes: SvgAttributes
+  children: SvgElement[]
+}
 
-export function useElement(tag: SvgTag): SvgElement {
+export function useElement(attributes: SvgAttributes): SvgElement {
   return {
+    attributes,
     children: [],
-    ...useSvgProps(tag),
   }
 }
 
-export function useSvgProps(tag: SvgTag): SvgProps {
+export function useSvgProps(tag: SvgTag): SvgAttributes {
   switch (tag) {
     case 'svg':
       return useSvg()

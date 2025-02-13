@@ -20,6 +20,6 @@ export function usePreserveAspectRatio() {
   return {
     align,
     meetOrSlice,
-    asString: computed(() => `${align} ${meetOrSlice}`),
+    asAttribute: computed(() => `${align.value} ${meetOrSlice.value}`),
   }
 }
