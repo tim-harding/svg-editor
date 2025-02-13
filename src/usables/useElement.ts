@@ -1,23 +1,21 @@
+import type { ComputedRef } from 'vue'
 import { useCircle, type SvgCircle } from './useCircle'
 import { useEllipse, type SvgEllipse } from './useEllipse'
 import { useImage, type SvgImage } from './useImage'
 import { useSvg, type Svg } from './useSvg'
 
-export type SvgTag = SvgAttributes['is']
-export type SvgAttributes = Svg | SvgEllipse | SvgCircle | SvgImage
+export type SvgElementTagged = Svg | SvgEllipse | SvgImage | SvgCircle
+export type SvgTag = SvgElementTagged['tag']
+export type SvgAttribute = {
+  asAttribute: ComputedRef<string>
+}
 export type SvgElement = {
-  attributes: SvgAttributes
-  children: SvgElement[]
+  tag: SvgTag
+  attributes: Record<string, SvgAttribute>
+  children?: SvgElement[]
 }
 
-export function useElement(attributes: SvgAttributes): SvgElement {
-  return {
-    attributes,
-    children: [],
-  }
-}
-
-export function useSvgProps(tag: SvgTag): SvgAttributes {
+export function useSvgTag(tag: SvgTag): SvgElementTagged {
   switch (tag) {
     case 'svg':
       return useSvg()

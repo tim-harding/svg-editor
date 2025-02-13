@@ -14,6 +14,8 @@ export type Align =
 
 export type MeetOrSlice = 'meet' | 'slice'
 
+export type PreserveAspectRatio = ReturnType<typeof usePreserveAspectRatio>
+
 export function usePreserveAspectRatio() {
   const align = ref('xMidYMid' as Align)
   const meetOrSlice = ref('meet' as MeetOrSlice)

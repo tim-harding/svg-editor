@@ -4,10 +4,12 @@ export type SvgEllipse = ReturnType<typeof useEllipse>
 
 export function useEllipse() {
   return {
-    is: 'ellipse' as 'ellipse',
-    cx: useLength(),
-    cy: useLength(),
-    rx: useLength(),
-    ry: useLength(),
+    tag: 'ellipse' as 'ellipse',
+    attributes: {
+      cx: useLength(),
+      cy: useLength(),
+      rx: useLength(),
+      ry: useLength(),
+    },
   }
 }

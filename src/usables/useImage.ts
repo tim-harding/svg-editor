@@ -1,17 +1,19 @@
 import { useLength } from './useLength'
-import { usePlug } from './usePlug'
 import { usePreserveAspectRatio } from './usePreserveAspectRatio'
+import { useUrl } from './useUrl'
 
 export type SvgImage = ReturnType<typeof useImage>
 
 export function useImage() {
   return {
-    is: 'image' as 'image',
-    x: useLength(),
-    y: useLength(),
-    width: useLength(),
-    height: useLength(),
-    preserveAspectRatio: usePreserveAspectRatio(),
-    href: usePlug(new URL('')),
+    tag: 'image' as 'image',
+    attributes: {
+      x: useLength(),
+      y: useLength(),
+      width: useLength(),
+      height: useLength(),
+      preserveAspectRatio: usePreserveAspectRatio(),
+      href: useUrl(),
+    },
   }
 }

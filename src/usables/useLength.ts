@@ -1,6 +1,7 @@
 import { computed, ref } from 'vue'
 
 export type LengthUnit = '' | '%' | 'em' | 'ex' | 'px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc'
+export type Length = ReturnType<typeof useLength>
 
 export function useLength() {
   const unit = ref('' as LengthUnit)

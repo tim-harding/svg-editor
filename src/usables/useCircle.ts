@@ -4,9 +4,11 @@ export type SvgCircle = ReturnType<typeof useCircle>
 
 export function useCircle() {
   return {
-    is: 'circle' as 'circle',
-    cx: useLength(),
-    cy: useLength(),
-    r: useLength(),
+    tag: 'circle' as 'circle',
+    attributes: {
+      cx: useLength(),
+      cy: useLength(),
+      r: useLength(),
+    },
   }
 }
