@@ -7,8 +7,9 @@ export function useLength() {
   const unit = ref('' as LengthUnit)
   const magnitude = ref(0)
   return {
+    kind: 'length' as 'length',
     unit,
     magnitude,
-    asAttribute: computed(() => `${magnitude.value}${unit.value}`),
+    property: computed(() => `${magnitude.value}${unit.value}`),
   }
 }

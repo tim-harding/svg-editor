@@ -20,8 +20,9 @@ export function usePreserveAspectRatio() {
   const align = ref('xMidYMid' as Align)
   const meetOrSlice = ref('meet' as MeetOrSlice)
   return {
+    kind: 'preserveAspectRatio' as 'preserveAspectRatio',
     align,
     meetOrSlice,
-    asAttribute: computed(() => `${align.value} ${meetOrSlice.value}`),
+    property: computed(() => `${align.value} ${meetOrSlice.value}`),
   }
 }
