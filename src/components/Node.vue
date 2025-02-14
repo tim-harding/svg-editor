@@ -1,35 +1,13 @@
 <script setup lang="ts">
-import { assert } from '@/misc/assertions'
+import { useDragStore } from '@/stores/drag-store'
 import type { SvgTree } from '@/usables/useTree'
-import { useEventListener } from '@vueuse/core'
-import { computed, EffectScope, effectScope, shallowRef } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps<{
   tree: SvgTree
 }>()
 
-const dragScope = shallowRef(null as null | EffectScope)
-const isDragging = computed(() => dragScope !== null)
-
-function beginDrag() {
-  dragScope.value = effectScope()
-  dragScope.value.run(() => {
-    useEventListener(document, 'mousemove', (e) => {
-      if (props.tree.position.value === null) return
-      props.tree.position.value.x += e.movementX
-      props.tree.position.value.y += e.movementY
-    })
-    useEventListener(document, 'mouseup', (_) => {
-      endDrag()
-    })
-  })
-}
-
-function endDrag() {
-  assert(dragScope.value !== null)
-  dragScope.value.stop()
-  dragScope.value = null
-}
+const dragStore = useDragStore()
 
 const transform = computed(() => {
   const position = props.tree.position.value
@@ -39,8 +17,14 @@ const transform = computed(() => {
 </script>
 
 <template>
-  <div v-if="transform" @mousedown="beginDrag" :style="{ transform }" :class="s.node">
+  <div
+    v-if="transform"
+    @mousedown="() => (dragStore.drag = props.tree)"
+    :style="{ transform }"
+    :class="s.node"
+  >
     <span>{{ tree.root.tag }}</span>
+    <div :class="s.dropZone"></div>
   </div>
 </template>
 
@@ -59,5 +43,11 @@ const transform = computed(() => {
   &:hover {
     background-color: var(--accent-solid-strong);
   }
+}
+
+.dropZone {
+  background-color: var(--yellow-solid);
+  block-size: 1rem;
+  inline-size: 100%;
 }
 </style>

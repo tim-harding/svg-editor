@@ -163,46 +163,46 @@ Steps 11 and 12 are designed for text.
 }
 
 :root {
-  --red-base: var(--error-1);
-  --red-bg-subtle: var(--error-2);
-  --red-bg: var(--error-3);
-  --red-bg-hover: var(--error-4);
-  --red-bg-active: var(--error-5);
-  --red-line: var(--error-6);
-  --red-border: var(--error-7);
-  --red-border-strong: var(--error-8);
-  --red-solid: var(--error-9);
-  --red-solid-strong: var(--error-10);
-  --red-text: var(--error-11);
-  --red-text-strong: var(--error-12);
+  --red-base: var(--red-1);
+  --red-bg-subtle: var(--red-2);
+  --red-bg: var(--red-3);
+  --red-bg-hover: var(--red-4);
+  --red-bg-active: var(--red-5);
+  --red-line: var(--red-6);
+  --red-border: var(--red-7);
+  --red-border-strong: var(--red-8);
+  --red-solid: var(--red-9);
+  --red-solid-strong: var(--red-10);
+  --red-text: var(--red-11);
+  --red-text-strong: var(--red-12);
 }
 
 :root {
-  --yellow-base: var(--warning-1);
-  --yellow-bg-subtle: var(--warning-2);
-  --yellow-bg: var(--warning-3);
-  --yellow-bg-hover: var(--warning-4);
-  --yellow-bg-active: var(--warning-5);
-  --yellow-line: var(--warning-6);
-  --yellow-border: var(--warning-7);
-  --yellow-border-strong: var(--warning-8);
-  --yellow-solid: var(--warning-9);
-  --yellow-solid-strong: var(--warning-10);
-  --yellow-text: var(--warning-11);
-  --yellow-text-strong: var(--warning-12);
+  --yellow-base: var(--yellow-1);
+  --yellow-bg-subtle: var(--yellow-2);
+  --yellow-bg: var(--yellow-3);
+  --yellow-bg-hover: var(--yellow-4);
+  --yellow-bg-active: var(--yellow-5);
+  --yellow-line: var(--yellow-6);
+  --yellow-border: var(--yellow-7);
+  --yellow-border-strong: var(--yellow-8);
+  --yellow-solid: var(--yellow-9);
+  --yellow-solid-strong: var(--yellow-10);
+  --yellow-text: var(--yellow-11);
+  --yellow-text-strong: var(--yellow-12);
 }
 
 :root {
-  --green-base: var(--success-1);
-  --green-bg-subtle: var(--success-2);
-  --green-bg: var(--success-3);
-  --green-bg-hover: var(--success-4);
-  --green-bg-active: var(--success-5);
-  --green-line: var(--success-6);
-  --green-border: var(--success-7);
-  --green-border-strong: var(--success-8);
-  --green-solid: var(--success-9);
-  --green-solid-strong: var(--success-10);
-  --green-text: var(--success-11);
-  --green-text-strong: var(--success-12);
+  --green-base: var(--green-1);
+  --green-bg-subtle: var(--green-2);
+  --green-bg: var(--green-3);
+  --green-bg-hover: var(--green-4);
+  --green-bg-active: var(--green-5);
+  --green-line: var(--green-6);
+  --green-border: var(--green-7);
+  --green-border-strong: var(--green-8);
+  --green-solid: var(--green-9);
+  --green-solid-strong: var(--green-10);
+  --green-text: var(--green-11);
+  --green-text-strong: var(--green-12);
 }
