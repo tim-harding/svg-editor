@@ -6,7 +6,7 @@ const store = useSvgDocStore()
 </script>
 
 <template>
-  <Element :tree="store.svg"></Element>
+  <Element v-if="store.viewed" :tree="store.viewed"></Element>
 </template>
 
 <style module="s"></style>
