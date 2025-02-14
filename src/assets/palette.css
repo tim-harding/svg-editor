@@ -1,0 +1,208 @@
+/*
+https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale
+
+
+
+# Overview
+
+1    App background
+2    Subtle background
+3    UI element background
+4    Hovered UI element background
+5    Active / Selected UI element background
+6    Subtle borders and separators
+7    UI element border and focus rings
+8    Hovered UI element border
+9    Solid backgrounds
+10   Hovered solid backgrounds
+11   Low-contrast text
+12   High-contrast text
+
+
+
+# 1-2: Backgrounds
+
+Steps 1 and 2 are designed for app backgrounds and subtle component backgrounds.
+You can use them interchangeably, depending on the vibe you're going for.
+
+Appropriate applications include:
+
+- Main app background
+- Striped table background
+- Code block background
+- Card background
+- Sidebar background
+- Canvas area background
+
+
+
+# 3–5: Component backgrounds
+
+Steps 3, 4, and 5 are designed for UI component backgrounds.
+
+- Step 3 is for normal states.
+- Step 4 is for hover states.
+- Step 5 is for pressed or selected states.
+
+If your component has a transparent background in its default state, you can use
+Step 3 for its hover state.
+
+
+
+# 6–8: Borders
+
+Steps 6, 7, and 8 are designed for borders.
+
+- Step 6 is designed for subtle borders on components which are not interactive. 
+  For example sidebars, headers, cards, alerts, and separators.
+- Step 7 is designed for subtle borders on interactive components.
+- Step 8 is designed for stronger borders on interactive components and focus rings.
+
+
+
+# 9–10: Solid backgrounds
+
+Steps 9 and 10 are designed for solid backgrounds.
+
+Step 9 has the highest chroma of all steps in the scale. In other words, it's
+the purest step, the step mixed with the least amount of white or black. Because
+9 is the purest step, it has a wide range of applications:
+
+- Website/App backgrounds
+- Website section backgrounds
+- Header backgrounds
+- Component backgrounds
+- Graphics/Logos
+- Overlays
+- Coloured shadows
+- Accent borders
+
+Step 10 is designed for component hover states, where step 9 is the component's normal state background.
+
+
+
+# 11–12: Text
+
+Steps 11 and 12 are designed for text.
+
+- Step 11 is designed for low-contrast text.
+- Step 12 is designed for high-contrast text.
+*/
+
+@import '@radix-ui/colors/slate.css';
+@import '@radix-ui/colors/slate-dark.css';
+@import '@radix-ui/colors/iris.css';
+@import '@radix-ui/colors/iris-dark.css';
+@import '@radix-ui/colors/red.css';
+@import '@radix-ui/colors/red-dark.css';
+@import '@radix-ui/colors/yellow.css';
+@import '@radix-ui/colors/yellow-dark.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/green-dark.css';
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/white-alpha.css';
+
+:root {
+  --neutral-1: var(--slate-1);
+  --neutral-2: var(--slate-2);
+  --neutral-3: var(--slate-3);
+  --neutral-4: var(--slate-4);
+  --neutral-5: var(--slate-5);
+  --neutral-6: var(--slate-6);
+  --neutral-7: var(--slate-7);
+  --neutral-8: var(--slate-8);
+  --neutral-9: var(--slate-9);
+  --neutral-10: var(--slate-10);
+  --neutral-11: var(--slate-11);
+  --neutral-12: var(--slate-12);
+}
+
+:root {
+  --accent-1: var(--iris-1);
+  --accent-2: var(--iris-2);
+  --accent-3: var(--iris-3);
+  --accent-4: var(--iris-4);
+  --accent-5: var(--iris-5);
+  --accent-6: var(--iris-6);
+  --accent-7: var(--iris-7);
+  --accent-8: var(--iris-8);
+  --accent-9: var(--iris-9);
+  --accent-10: var(--iris-10);
+  --accent-11: var(--iris-11);
+  --accent-12: var(--iris-12);
+}
+
+:root {
+  --neutral-base: var(--neutral-1);
+  --neutral-bg-subtle: var(--neutral-2);
+  --neutral-bg: var(--neutral-3);
+  --neutral-bg-hover: var(--neutral-4);
+  --neutral-bg-active: var(--neutral-5);
+  --neutral-line: var(--neutral-6);
+  --neutral-border: var(--neutral-7);
+  --neutral-border-strong: var(--neutral-8);
+  --neutral-solid: var(--neutral-9);
+  --neutral-solid-strong: var(--neutral-10);
+  --neutral-text: var(--neutral-11);
+  --neutral-text-strong: var(--neutral-12);
+}
+
+:root {
+  --accent-base: var(--accent-1);
+  --accent-bg-subtle: var(--accent-2);
+  --accent-bg: var(--accent-3);
+  --accent-bg-hover: var(--accent-4);
+  --accent-bg-active: var(--accent-5);
+  --accent-line: var(--accent-6);
+  --accent-border: var(--accent-7);
+  --accent-border-strong: var(--accent-8);
+  --accent-solid: var(--accent-9);
+  --accent-solid-strong: var(--accent-10);
+  --accent-text: var(--accent-11);
+  --accent-text-strong: var(--accent-12);
+}
+
+:root {
+  --red-base: var(--error-1);
+  --red-bg-subtle: var(--error-2);
+  --red-bg: var(--error-3);
+  --red-bg-hover: var(--error-4);
+  --red-bg-active: var(--error-5);
+  --red-line: var(--error-6);
+  --red-border: var(--error-7);
+  --red-border-strong: var(--error-8);
+  --red-solid: var(--error-9);
+  --red-solid-strong: var(--error-10);
+  --red-text: var(--error-11);
+  --red-text-strong: var(--error-12);
+}
+
+:root {
+  --yellow-base: var(--warning-1);
+  --yellow-bg-subtle: var(--warning-2);
+  --yellow-bg: var(--warning-3);
+  --yellow-bg-hover: var(--warning-4);
+  --yellow-bg-active: var(--warning-5);
+  --yellow-line: var(--warning-6);
+  --yellow-border: var(--warning-7);
+  --yellow-border-strong: var(--warning-8);
+  --yellow-solid: var(--warning-9);
+  --yellow-solid-strong: var(--warning-10);
+  --yellow-text: var(--warning-11);
+  --yellow-text-strong: var(--warning-12);
+}
+
+:root {
+  --green-base: var(--success-1);
+  --green-bg-subtle: var(--success-2);
+  --green-bg: var(--success-3);
+  --green-bg-hover: var(--success-4);
+  --green-bg-active: var(--success-5);
+  --green-line: var(--success-6);
+  --green-border: var(--success-7);
+  --green-border-strong: var(--success-8);
+  --green-solid: var(--success-9);
+  --green-solid-strong: var(--success-10);
+  --green-text: var(--success-11);
+  --green-text-strong: var(--success-12);
+}

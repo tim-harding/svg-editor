@@ -1,33 +1,98 @@
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+@import "./palette.css";
+
+:root {
+  --black: var(--neutral-12);
+  --white: var(--neutral-1);
+
+  --shadow-color: rgb(0 0 0 / 0.025);
+  --shadow-8: 0px 1px 1px var(--shadow-color),
+    0px 2px 2px 0px var(--shadow-color), 0px 4px 4px 0px var(--shadow-color),
+    0px 8px 8px 0px var(--shadow-color);
+  --shadow-16: 0px 1px 1px var(--shadow-color),
+    0px 2px 2px 0px var(--shadow-color), 0px 4px 4px 0px var(--shadow-color),
+    0px 8px 8px 0px var(--shadow-color), 0px 16px 16px 0px var(--shadow-color);
+  --shadow-32: 0px 1px 1px var(--shadow-color),
+    0px 2px 2px 0px var(--shadow-color), 0px 4px 4px 0px var(--shadow-color),
+    0px 8px 8px 0px var(--shadow-color), 0px 16px 16px 0px var(--shadow-color),
+    0px 32px 32px 0px var(--shadow-color);
 }
 
-a,
-.green {
+:root.dark {
+  --black: var(--neutral-1);
+  --white: var(--neutral-12);
+  --shadow-color: rgb(0 0 0 / 0.1);
+}
+
+body {
+  background-color: var(--neutral-base);
+  color: var(--neutral-text);
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  color: currentColor;
+  cursor: pointer;
+}
+
+a {
+  color: currentColor;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 0px;
+  border: none;
+  background: none;
+  outline: none;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+input,
+button,
+textarea,
+select {
+  color: currentColor;
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
