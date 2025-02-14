@@ -1,7 +1,7 @@
 import { useCircle } from '@/usables/useCircle'
-import { useTree, type SvgTree } from '@/usables/useElement'
 import { useEllipse } from '@/usables/useEllipse'
 import { useSvg } from '@/usables/useSvg'
+import { useTree, type SvgTree } from '@/usables/useTree'
 import { defineStore } from 'pinia'
 import { shallowReactive, shallowRef } from 'vue'
 
