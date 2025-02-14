@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { useDragStore } from '@/stores/drag-store'
 import type { SvgTree } from '@/usables/useTree'
+import { templateRef } from '@vueuse/core'
 import { computed } from 'vue'
 
 const props = defineProps<{
   tree: SvgTree
 }>()
+
+const self = templateRef('self')
 
 const dragStore = useDragStore()
 
@@ -19,7 +22,14 @@ const transform = computed(() => {
 <template>
   <div
     v-if="transform"
-    @mousedown="() => (dragStore.drag = props.tree)"
+    ref="self"
+    @mousedown="
+      (e) => {
+        if (e.target === self) {
+          dragStore.drag = props.tree
+        }
+      }
+    "
     :style="{ transform }"
     :class="s.node"
   >
@@ -43,11 +53,11 @@ const transform = computed(() => {
   font-weight: 500;
   user-select: none;
 
-  &:hover {
+  &:hover:not(:has(:hover)) {
     background-color: var(--accent-bg-hover);
   }
 
-  &:active {
+  &:active:not(:has(:active)) {
     background-color: var(--accent-bg-active);
   }
 }
@@ -69,6 +79,10 @@ const transform = computed(() => {
   inline-size: calc(100% - 2rem);
   block-size: 1rem;
   background-color: var(--accent-solid);
+
+  &:hover {
+    background-color: var(--accent-solid-strong);
+  }
 }
 
 .output {
@@ -79,5 +93,9 @@ const transform = computed(() => {
   inline-size: 1rem;
   block-size: 1rem;
   background-color: var(--accent-solid);
+
+  &:hover {
+    background-color: var(--accent-solid-strong);
+  }
 }
 </style>
