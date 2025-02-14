@@ -1,4 +1,3 @@
-import type { SvgElementOpaque } from './useElement'
 import { useLength } from './useLength'
 import { useAttr } from './useAttr'
 import { usePreserveAspectRatio } from './usePreserveAspectRatio'
@@ -14,6 +13,5 @@ export function useSvg() {
       viewBox: useAttr(useLength()),
       preserveAspectRatio: useAttr(usePreserveAspectRatio()),
     },
-    children: [] as SvgElementOpaque[],
   }
 }

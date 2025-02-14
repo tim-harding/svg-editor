@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { type SvgElementOpaque } from '@/usables/useElement'
+import type { SvgTree } from '@/usables/useElement'
 import { computed } from 'vue'
 
 const props = defineProps<{
-  element: SvgElementOpaque
+  tree: SvgTree
 }>()
 
 const properties = computed(() => {
   return Object.fromEntries(
-    Object.entries(props.element.attributes).map(([k, v]) => [k, v.property]),
+    Object.entries(props.tree.root.attributes).map(([k, v]) => [k, v.property.value]),
   )
 })
 </script>
 
 <template>
-  <component :is="props.element.tag" v-bind="properties">
-    <Element v-for="child in props.element.children" :element="child" />
+  <component :is="props.tree.root.tag" v-bind="properties">
+    <Element v-for="child in props.tree.children" :tree="child" />
   </component>
 </template>

@@ -1,23 +1,25 @@
 import { useCircle } from '@/usables/useCircle'
+import { useTree } from '@/usables/useElement'
 import { useEllipse } from '@/usables/useEllipse'
 import { useSvg } from '@/usables/useSvg'
 import { defineStore } from 'pinia'
+import { markRaw } from 'vue'
 
 export const useSvgDocStore = defineStore('svg-doc', () => {
-  const circle = useCircle()
-  circle.attributes.cx.explicit.magnitude.value = 10
-  circle.attributes.cy.explicit.magnitude.value = 10
-  circle.attributes.r.explicit.magnitude.value = 10
+  const circle = useTree(useCircle())
+  circle.root.attributes.cx.explicit.magnitude.value = 10
+  circle.root.attributes.cy.explicit.magnitude.value = 10
+  circle.root.attributes.r.explicit.magnitude.value = 10
 
-  const ellipse = useEllipse()
-  ellipse.attributes.cx.explicit.magnitude.value = 50
-  ellipse.attributes.cy.explicit.magnitude.value = 50
-  ellipse.attributes.rx.explicit.magnitude.value = 50
-  ellipse.attributes.ry.explicit.magnitude.value = 100
+  const ellipse = useTree(useEllipse())
+  ellipse.root.attributes.cx.explicit.magnitude.value = 50
+  ellipse.root.attributes.cy.explicit.magnitude.value = 50
+  ellipse.root.attributes.rx.explicit.magnitude.value = 50
+  ellipse.root.attributes.ry.explicit.magnitude.value = 100
 
-  const svg = useSvg()
+  const svg = useTree(useSvg())
   svg.children.push(circle)
   svg.children.push(ellipse)
 
-  return { svg }
+  return { svg: markRaw(svg) }
 })

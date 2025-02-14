@@ -1,4 +1,3 @@
-import type { SvgAttributePlug } from './useAttr'
 import { useCircle, type SvgCircle } from './useCircle'
 import { useEllipse, type SvgEllipse } from './useEllipse'
 import { useImage, type SvgImage } from './useImage'
@@ -6,10 +5,16 @@ import { useSvg, type Svg } from './useSvg'
 
 export type SvgElement = Svg | SvgEllipse | SvgImage | SvgCircle
 export type SvgTag = SvgElement['tag']
-export type SvgElementOpaque = {
-  tag: SvgTag
-  attributes: Record<string, SvgAttributePlug>
-  children?: SvgElementOpaque[]
+export type SvgTree = {
+  root: SvgElement
+  children: SvgTree[]
+}
+
+export function useTree<T extends SvgElement>(root: T) {
+  return {
+    root,
+    children: [] as SvgTree[],
+  }
 }
 
 export function useElement(tag: SvgTag): SvgElement {

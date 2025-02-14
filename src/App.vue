@@ -6,7 +6,7 @@ const store = useSvgDocStore()
 </script>
 
 <template>
-  <Element :element="store.svg"></Element>
+  <Element :tree="store.svg"></Element>
 </template>
 
 <style module="s"></style>
