@@ -1,12 +1,12 @@
 # Animation
 
-animate
-animateTransform
+- [ ] animate
+- [ ] animateTransform
 
-animateMotion
-mpath
+- [ ] animateMotion
+- [ ] mpath
 
-set (for interactivity)
+- [ ] set (for interactivity)
 
 # Shapes
 
@@ -25,83 +25,84 @@ set (for interactivity)
 
 # Containers
 
-defs
-clipPath
-g
-mask
+- [ ] svg
+- [ ] defs
+- [ ] clipPath
+- [ ] g
+- [ ] mask
 
-symbol
-use
+- [ ] symbol
+- [ ] use
 
 # Resources
 
-pattern
+- [ ] pattern
 
 ## Gradient
 
-linearGradient
-radialGradient
-stop
+- [ ] linearGradient
+- [ ] radialGradient
+- [ ] stop
 
 # Miscellaneous
 
-a
-desc
-metadata
-script
-switch
-title
-view
+- [ ] a
+- [ ] desc
+- [ ] metadata
+- [ ] script
+- [ ] switch
+- [ ] title
+- [ ] view
 
 # Filter effects
 
-filter
+- [ ] filter
 
 ## Blending
 
-feBlend
-feComposite
+- [ ] feBlend
+- [ ] feComposite
 
 ### Merge
 
-feMerge
-feMergeNode
+- [ ] feMerge
+- [ ] feMergeNode
 
 ## Spatial
 
-feConvolveMatrix
-feGaussianBlur
-feDisplacementMap
+- [ ] feConvolveMatrix
+- [ ] feGaussianBlur
+- [ ] feDisplacementMap
 
 ## Synthesis
 
-feTurbulence
-feFlood
-feImage
-feTile
+- [ ] feTurbulence
+- [ ] feFlood
+- [ ] feImage
+- [ ] feTile
 
 ## Modifier
 
-feDropShadow
-feMorphology
-feOffset
+- [ ] feDropShadow
+- [ ] feMorphology
+- [ ] feOffset
 
 ## Color
 
-feColorMatrix
+- [ ] feColorMatrix
 
 ### Color mapping
 
-feComponentTransfer
-feFuncA
-feFuncB
-feFuncG
-feFuncR
+- [ ] feComponentTransfer
+- [ ] feFuncA
+- [ ] feFuncB
+- [ ] feFuncG
+- [ ] feFuncR
 
 ## Lighting
 
-feDiffuseLighting
-feDistantLight
-fePointLight
-feSpecularLighting
-feSpotLight
+- [ ] feDiffuseLighting
+- [ ] feDistantLight
+- [ ] fePointLight
+- [ ] feSpecularLighting
+- [ ] feSpotLight
