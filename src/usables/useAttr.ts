@@ -1,9 +1,10 @@
 import { computed, ref, type Ref } from 'vue'
-import { type Length } from './useLength'
-import { type PreserveAspectRatio } from './usePreserveAspectRatio'
-import { type Url } from './useUrl'
+import type { Length } from './useLength'
+import type { PreserveAspectRatio } from './usePreserveAspectRatio'
+import type { Url } from './useUrl'
+import type { ViewBox } from './useViewBox'
 
-export type SvgAttribute = Length | PreserveAspectRatio | Url
+export type SvgAttribute = Length | PreserveAspectRatio | Url | ViewBox
 export type SvgAttributeKind = SvgAttribute['kind']
 export type SvgAttributePlug = ReturnType<typeof useAttr>
 
