@@ -5,17 +5,6 @@ import { useSvg, type Svg } from './useSvg'
 
 export type SvgElement = Svg | SvgEllipse | SvgImage | SvgCircle
 export type SvgTag = SvgElement['tag']
-export type SvgTree = {
-  root: SvgElement
-  children: SvgTree[]
-}
-
-export function useTree<T extends SvgElement>(root: T) {
-  return {
-    root,
-    children: [] as SvgTree[],
-  }
-}
 
 export function useElement(tag: SvgTag): SvgElement {
   switch (tag) {
