@@ -26,7 +26,14 @@ const transform = computed(() => {
     @mousedown="
       (e) => {
         if (e.target === self) {
-          dragStore.drag = props.tree
+          dragStore.drag = {
+            tree: props.tree,
+            initialTreePosition: {
+              x: props.tree.position.value.x,
+              y: props.tree.position.value.y,
+            },
+            initialCursorPosition: { x: e.screenX, y: e.screenY },
+          }
         }
       }
     "

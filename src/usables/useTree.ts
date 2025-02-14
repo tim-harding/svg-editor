@@ -3,7 +3,7 @@ import type { SvgElement } from './useElement'
 
 export type SvgTree = {
   root: SvgElement
-  position: Ref<{ x: number; y: number } | null>
+  position: Ref<{ x: number; y: number }>
   children: SvgTree[]
 }
 
