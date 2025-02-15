@@ -69,6 +69,11 @@ function updateOutbound(pos: Vec.T) {
       "
     ></div>
     <Wire v-if="outboundTo" :from="outboundFrom" :to="outboundTo" />
+    <Wire
+      v-for="child in props.tree.children"
+      :from="Vec.add(child.position.value, { x: 16 * 3, y: 16 * 2 })"
+      :to="Vec.add(props.tree.position.value, { x: 16 * 3, y: 0 })"
+    />
   </div>
 </template>
 
