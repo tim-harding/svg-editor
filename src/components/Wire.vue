@@ -13,7 +13,9 @@ const d = computed(() => {
 </script>
 
 <template>
-  <path :d :class="s.wire"></path>
+  <Teleport to="#wires">
+    <path :d :class="s.wire"></path>
+  </Teleport>
 </template>
 
 <style module="s">

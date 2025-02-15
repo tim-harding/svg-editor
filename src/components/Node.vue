@@ -3,7 +3,8 @@ import { Vec } from '@/misc/Vec'
 import { useDragStore } from '@/stores/drag-store'
 import type { SvgTree } from '@/usables/useTree'
 import { templateRef } from '@vueuse/core'
-import { computed, toValue } from 'vue'
+import { computed, ref } from 'vue'
+import Wire from './Wire.vue'
 
 const props = defineProps<{
   tree: SvgTree
@@ -24,12 +25,18 @@ function updateDrag(e: MouseEvent) {
     x: props.tree.position.value.x,
     y: props.tree.position.value.y,
   }
-  const initialCursorPosition = { x: e.screenX, y: e.screenY }
+  const initialCursorPosition = { x: e.clientX, y: e.clientY }
   return (cursor: Vec.T) => {
     const pos = Vec.add(initialTreePosition, Vec.sub(cursor, initialCursorPosition))
     props.tree.position.value.x = pos.x
     props.tree.position.value.y = pos.y
   }
+}
+
+const outboundFrom = computed(() => Vec.add(props.tree.position.value, { x: 16 * 3, y: 16 * 2 }))
+const outboundTo = ref(null as null | Vec.T)
+function updateOutbound(pos: Vec.T) {
+  outboundTo.value = pos
 }
 </script>
 
@@ -51,7 +58,17 @@ function updateDrag(e: MouseEvent) {
   >
     <span :class="s.name">{{ tree.root.tag }}</span>
     <div :class="s.inputs"></div>
-    <div :class="s.output"></div>
+    <div
+      :class="s.output"
+      @mousedown="
+        () =>
+          (dragStore.drag = {
+            update: updateOutbound,
+            end: () => {},
+          })
+      "
+    ></div>
+    <Wire v-if="outboundTo" :from="outboundFrom" :to="outboundTo" />
   </div>
 </template>
 

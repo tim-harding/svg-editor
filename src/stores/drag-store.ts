@@ -21,7 +21,7 @@ export const useDragStore = defineStore('drag', () => {
       stopMouseup()
     } else {
       stopMousemove = useEventListener(document, 'mousemove', (e) => {
-        currentDrag.update({ x: e.screenX, y: e.screenY })
+        currentDrag.update({ x: e.clientX, y: e.clientY })
       })
       stopMouseup = useEventListener(document, 'mouseup', (_) => {
         currentDrag.end()
