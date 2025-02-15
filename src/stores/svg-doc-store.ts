@@ -11,12 +11,16 @@ export const useSvgDocStore = defineStore('svg-doc', () => {
   const viewed = shallowRef(null as SvgTree | null)
 
   const circle = useTree(useCircle())
+  circle.position.value.x = 100
+  circle.position.value.y = 10
   circle.root.attributes.cx.explicit.magnitude.value = 10
   circle.root.attributes.cy.explicit.magnitude.value = 10
   circle.root.attributes.r.explicit.magnitude.value = 10
   elements.push(circle)
 
   const ellipse = useTree(useEllipse())
+  ellipse.position.value.x = 600
+  ellipse.position.value.y = 10
   ellipse.root.attributes.cx.explicit.magnitude.value = 50
   ellipse.root.attributes.cy.explicit.magnitude.value = 50
   ellipse.root.attributes.rx.explicit.magnitude.value = 50
@@ -24,6 +28,8 @@ export const useSvgDocStore = defineStore('svg-doc', () => {
   elements.push(ellipse)
 
   const svg = useTree(useSvg())
+  svg.position.value.x = 350
+  svg.position.value.y = 400
   svg.children.push(circle)
   svg.children.push(ellipse)
   elements.push(svg)

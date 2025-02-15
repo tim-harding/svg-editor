@@ -13,7 +13,7 @@ const d = computed(() => {
 </script>
 
 <template>
-  <Teleport to="#wires">
+  <Teleport to="#wires" defer>
     <path :d :class="s.wire"></path>
   </Teleport>
 </template>
