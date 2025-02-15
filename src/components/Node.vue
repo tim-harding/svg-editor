@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Vec } from '@/misc/Vec'
 import { useDragStore } from '@/stores/drag-store'
 import type { SvgTree } from '@/usables/useTree'
 import { templateRef } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, toValue } from 'vue'
 
 const props = defineProps<{
   tree: SvgTree
@@ -17,6 +18,19 @@ const transform = computed(() => {
   if (position === null) return null
   return `translate(${position.x}px, ${position.y}px)`
 })
+
+function updateDrag(e: MouseEvent) {
+  const initialTreePosition = {
+    x: props.tree.position.value.x,
+    y: props.tree.position.value.y,
+  }
+  const initialCursorPosition = { x: e.screenX, y: e.screenY }
+  return (cursor: Vec.T) => {
+    const pos = Vec.add(initialTreePosition, Vec.sub(cursor, initialCursorPosition))
+    props.tree.position.value.x = pos.x
+    props.tree.position.value.y = pos.y
+  }
+}
 </script>
 
 <template>
@@ -25,15 +39,10 @@ const transform = computed(() => {
     ref="self"
     @mousedown="
       (e) => {
-        if (e.target === self) {
-          dragStore.drag = {
-            tree: props.tree,
-            initialTreePosition: {
-              x: props.tree.position.value.x,
-              y: props.tree.position.value.y,
-            },
-            initialCursorPosition: { x: e.screenX, y: e.screenY },
-          }
+        if (e.target !== self) return
+        dragStore.drag = {
+          update: updateDrag(e),
+          end: () => {},
         }
       }
     "

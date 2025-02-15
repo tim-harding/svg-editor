@@ -16,7 +16,7 @@ const viewBox = computed(() => `0 0 ${width.value} ${height.value}`)
 <template>
   <div ref="element" :class="s.nodeEditor">
     <NodeStandalone v-for="tree in doc.elements" :tree="tree" :class="s.node" />
-    <svg :viewBox :class="s.wires">
+    <svg id="wires" :viewBox :class="s.wires">
       <Wire :from="{ x: 0, y: 0 }" :to="{ x: pos.x.value, y: pos.y.value }" />
     </svg>
   </div>
