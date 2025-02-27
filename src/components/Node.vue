@@ -5,6 +5,8 @@ import type { SvgTree } from '@/usables/useTree'
 import { templateRef } from '@vueuse/core'
 import { computed, ref } from 'vue'
 import Wire from './Wire.vue'
+import WireSink from './WireSink.vue'
+import { assert } from '@/misc/assertions'
 
 const props = defineProps<{
   tree: SvgTree
@@ -20,23 +22,37 @@ const transform = computed(() => {
   return `translate(${position.x}px, ${position.y}px)`
 })
 
-function updateDrag(e: MouseEvent) {
+function updateNodeMove(e: MouseEvent) {
+  const value = props.tree.position.value
   const initialTreePosition = {
-    x: props.tree.position.value.x,
-    y: props.tree.position.value.y,
+    x: value.x,
+    y: value.y,
   }
   const initialCursorPosition = { x: e.clientX, y: e.clientY }
   return (cursor: Vec.T) => {
     const pos = Vec.add(initialTreePosition, Vec.sub(cursor, initialCursorPosition))
-    props.tree.position.value.x = pos.x
-    props.tree.position.value.y = pos.y
+    value.x = pos.x
+    value.y = pos.y
   }
 }
 
 const outboundFrom = computed(() => Vec.add(props.tree.position.value, { x: 16 * 3, y: 16 * 2 }))
 const outboundTo = ref(null as null | Vec.T)
-function updateOutbound(pos: Vec.T) {
+
+function updateWireDraw(pos: Vec.T) {
   outboundTo.value = pos
+}
+
+function endWireDraw() {
+  const drag = dragStore.drag
+  assert(drag !== null)
+  const state = drag.state
+  assert(state.kind === 'wire-draw')
+  if (state.sink) {
+    const inputs = state.sink.inputs
+    if (inputs.includes(props.tree)) return
+    inputs.push(props.tree)
+  }
 }
 </script>
 
@@ -48,8 +64,11 @@ function updateOutbound(pos: Vec.T) {
       (e) => {
         if (e.target !== self) return
         dragStore.drag = {
-          update: updateDrag(e),
+          update: updateNodeMove(e),
           end: () => {},
+          state: {
+            kind: 'node-move',
+          },
         }
       }
     "
@@ -57,21 +76,25 @@ function updateOutbound(pos: Vec.T) {
     :class="s.node"
   >
     <span :class="s.name">{{ tree.root.tag }}</span>
-    <div :class="s.inputs"></div>
+    <WireSink :sink="props.tree" />
     <div
       :class="s.output"
       @mousedown="
         () =>
           (dragStore.drag = {
-            update: updateOutbound,
-            end: () => {},
+            update: updateWireDraw,
+            end: endWireDraw,
+            state: {
+              kind: 'wire-draw',
+              sink: null,
+            },
           })
       "
     ></div>
     <Wire v-if="outboundTo" :from="outboundFrom" :to="outboundTo" />
     <Wire
-      v-for="child in props.tree.children"
-      :from="Vec.add(child.position.value, { x: 16 * 3, y: 16 * 2 })"
+      v-for="input in props.tree.inputs"
+      :from="Vec.add(input.position.value, { x: 16 * 3, y: 16 * 2 })"
       :to="Vec.add(props.tree.position.value, { x: 16 * 3, y: 0 })"
     />
   </div>

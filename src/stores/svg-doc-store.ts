@@ -30,8 +30,8 @@ export const useSvgDocStore = defineStore('svg-doc', () => {
   const svg = useTree(useSvg())
   svg.position.value.x = 350
   svg.position.value.y = 400
-  svg.children.push(circle)
-  svg.children.push(ellipse)
+  svg.inputs.push(circle)
+  svg.inputs.push(ellipse)
   elements.push(svg)
 
   viewed.value = svg

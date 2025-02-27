@@ -4,13 +4,13 @@ import type { SvgElement } from './useElement'
 export type SvgTree = {
   root: SvgElement
   position: Ref<{ x: number; y: number }>
-  children: SvgTree[]
+  inputs: SvgTree[]
 }
 
 export function useTree<T extends SvgElement>(root: T) {
   return {
     root,
     position: ref({ x: 0, y: 0 }),
-    children: [] as SvgTree[],
+    inputs: [] as SvgTree[],
   }
 }
