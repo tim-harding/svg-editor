@@ -2,14 +2,24 @@
 import { useSvgDocStore } from './stores/svg-doc-store'
 import Element from './components/Element.vue'
 import NodeEditor from './components/NodeEditor.vue'
+import { SplitterGroup, SplitterPanel, SplitterResizeHandle } from 'reka-ui'
 
 const store = useSvgDocStore()
 </script>
 
 <template>
   <div :class="s.app">
-    <NodeEditor :class="s.nodeEditor" />
-    <Element v-if="store.viewed" :tree="store.viewed" :class="s.element" />
+    <SplitterGroup direction="horizontal">
+      <SplitterPanel>
+        <NodeEditor :class="s.nodeEditor" />
+      </SplitterPanel>
+
+      <SplitterResizeHandle :class="s.resizeHandle" />
+
+      <SplitterPanel>
+        <Element v-if="store.viewed" :tree="store.viewed" :class="s.element" />
+      </SplitterPanel>
+    </SplitterGroup>
   </div>
 </template>
 
@@ -23,6 +33,12 @@ const store = useSvgDocStore()
 
 .element,
 .nodeEditor {
-  grid-area: full;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.resizeHandle {
+  inline-size: 0.25rem;
+  background-color: var(--neutral-solid);
 }
 </style>
