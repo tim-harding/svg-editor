@@ -3,10 +3,10 @@ import { Vec } from '@/misc/Vec'
 import { useDragStore } from '@/stores/drag-store'
 import type { SvgTree } from '@/usables/useTree'
 import { templateRef } from '@vueuse/core'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import Wire from './Wire.vue'
 import WireSink from './WireSink.vue'
-import { assert } from '@/misc/assertions'
+import WireSource from './WireSource.vue'
 
 const props = defineProps<{
   tree: SvgTree
@@ -35,25 +35,6 @@ function updateNodeMove(e: MouseEvent) {
     value.y = pos.y
   }
 }
-
-const outboundFrom = computed(() => Vec.add(props.tree.position.value, { x: 16 * 3, y: 16 * 2 }))
-const outboundTo = ref(null as null | Vec.T)
-
-function updateWireDraw(pos: Vec.T) {
-  outboundTo.value = pos
-}
-
-function endWireDraw() {
-  const drag = dragStore.drag
-  assert(drag !== null)
-  const state = drag.state
-  assert(state.kind === 'wire-draw')
-  if (state.sink) {
-    const inputs = state.sink.inputs
-    if (inputs.includes(props.tree)) return
-    inputs.push(props.tree)
-  }
-}
 </script>
 
 <template>
@@ -77,21 +58,7 @@ function endWireDraw() {
   >
     <span :class="s.name">{{ tree.root.tag }}</span>
     <WireSink :sink="props.tree" />
-    <div
-      :class="s.output"
-      @mousedown="
-        () =>
-          (dragStore.drag = {
-            update: updateWireDraw,
-            end: endWireDraw,
-            state: {
-              kind: 'wire-draw',
-              sink: null,
-            },
-          })
-      "
-    ></div>
-    <Wire v-if="outboundTo" :from="outboundFrom" :to="outboundTo" />
+    <WireSource :tree="props.tree" />
     <Wire
       v-for="input in props.tree.inputs"
       :from="Vec.add(input.position.value, { x: 16 * 3, y: 16 * 2 })"
@@ -130,33 +97,5 @@ function endWireDraw() {
   height: 100%;
   text-align: end;
   pointer-events: none;
-}
-
-.inputs {
-  position: absolute;
-  top: -0.5rem;
-  left: 1rem;
-  border-radius: 0.5rem;
-  inline-size: calc(100% - 2rem);
-  block-size: 1rem;
-  background-color: var(--accent-solid);
-
-  &:hover {
-    background-color: var(--accent-solid-strong);
-  }
-}
-
-.output {
-  position: absolute;
-  bottom: -0.5rem;
-  left: calc(50% - 0.5rem);
-  border-radius: 0.5rem;
-  inline-size: 1rem;
-  block-size: 1rem;
-  background-color: var(--accent-solid);
-
-  &:hover {
-    background-color: var(--accent-solid-strong);
-  }
 }
 </style>
