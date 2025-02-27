@@ -3,12 +3,12 @@ import type { Vec } from '@/misc/Vec'
 import { computed } from 'vue'
 
 const props = defineProps<{
-  from: Vec.T
-  to: Vec.T
+  src: Vec.T
+  dst: Vec.T
 }>()
 
 const d = computed(() => {
-  return `M ${props.from.x},${props.from.y} L ${props.to.x},${props.to.y}`
+  return `M ${props.src.x},${props.src.y} L ${props.dst.x},${props.dst.y}`
 })
 </script>
 

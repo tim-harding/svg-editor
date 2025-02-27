@@ -24,11 +24,10 @@ function endWireDraw() {
   assert(drag !== null)
   const state = drag.state
   assert(state.kind === 'wire-draw')
-  if (state.sink) {
-    const inputs = state.sink.inputs
-    if (inputs.includes(props.tree)) return
-    inputs.push(props.tree)
-  }
+  if (!state.sink) return
+  const inputs = state.sink.inputs
+  if (inputs.includes(props.tree)) return
+  inputs.push(props.tree)
 }
 </script>
 
@@ -47,7 +46,7 @@ function endWireDraw() {
         })
     "
   ></div>
-  <Wire v-if="outboundTo" :from="outboundFrom" :to="outboundTo" />
+  <Wire v-if="outboundTo" :src="outboundFrom" :dst="outboundTo" />
 </template>
 
 <style module="s">

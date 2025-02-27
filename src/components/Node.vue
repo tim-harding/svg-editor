@@ -4,7 +4,6 @@ import { useDragStore } from '@/stores/drag-store'
 import type { SvgTree } from '@/usables/useTree'
 import { templateRef } from '@vueuse/core'
 import { computed } from 'vue'
-import Wire from './Wire.vue'
 import WireSink from './WireSink.vue'
 import WireSource from './WireSource.vue'
 
@@ -57,13 +56,8 @@ function updateNodeMove(e: MouseEvent) {
     :class="s.node"
   >
     <span :class="s.name">{{ tree.root.tag }}</span>
-    <WireSink :sink="props.tree" />
+    <WireSink :tree="props.tree" />
     <WireSource :tree="props.tree" />
-    <Wire
-      v-for="input in props.tree.inputs"
-      :from="Vec.add(input.position.value, { x: 16 * 3, y: 16 * 2 })"
-      :to="Vec.add(props.tree.position.value, { x: 16 * 3, y: 0 })"
-    />
   </div>
 </template>
 

@@ -3,7 +3,7 @@ import { useEllipse } from '@/usables/useEllipse'
 import { useSvg } from '@/usables/useSvg'
 import { useTree, type SvgTree } from '@/usables/useTree'
 import { defineStore } from 'pinia'
-import { shallowReactive, shallowRef } from 'vue'
+import { shallowReactive, shallowRef, watch, watchEffect } from 'vue'
 
 export const useSvgDocStore = defineStore('svg-doc', () => {
   const elements = shallowReactive([] as SvgTree[])

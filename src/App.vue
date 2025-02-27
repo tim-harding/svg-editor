@@ -9,7 +9,7 @@ const store = useSvgDocStore()
 
 <template>
   <div :class="s.app">
-    <SplitterGroup direction="horizontal">
+    <SplitterGroup direction="vertical">
       <SplitterPanel>
         <NodeEditor :class="s.nodeEditor" />
       </SplitterPanel>
@@ -38,7 +38,7 @@ const store = useSvgDocStore()
 }
 
 .resizeHandle {
-  inline-size: 0.25rem;
+  block-size: 0.25rem;
   background-color: var(--neutral-solid);
 }
 </style>
