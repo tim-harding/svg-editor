@@ -20,6 +20,7 @@ function updateWireDraw(pos: Vec.T) {
 }
 
 function endWireDraw() {
+  outboundTo.value = null
   const drag = dragStore.drag
   assert(drag !== null)
   const state = drag.state
