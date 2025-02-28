@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SvgTree } from '@/usables/useElement'
+import type { SvgTree } from '@/usables/useTree'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -15,6 +15,6 @@ const properties = computed(() => {
 
 <template>
   <component :is="props.tree.root.tag" v-bind="properties">
-    <Element v-for="child in props.tree.children" :tree="child" />
+    <Element v-for="child in props.tree.inputs" :tree="child" />
   </component>
 </template>

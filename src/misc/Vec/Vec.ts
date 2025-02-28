@@ -3,8 +3,6 @@ export interface T {
   y: number
 }
 
-export const NSEW = [make(0, 1), make(0, -1), make(1, 0), make(-1, 0)]
-
 export function make(x: number, y: number): T {
   return { x, y }
 }
