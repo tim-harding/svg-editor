@@ -7,6 +7,9 @@ import { computed } from 'vue'
 import WireSink from './WireSink.vue'
 import WireSource from './WireSource.vue'
 
+// TODO: Prevent cycles
+// TODO: Properties pane
+
 const props = defineProps<{
   tree: SvgTree
 }>()

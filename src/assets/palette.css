@@ -91,14 +91,50 @@ Steps 11 and 12 are designed for text.
 
 @import '@radix-ui/colors/slate.css';
 @import '@radix-ui/colors/slate-dark.css';
-@import '@radix-ui/colors/iris.css';
-@import '@radix-ui/colors/iris-dark.css';
-@import '@radix-ui/colors/red.css';
-@import '@radix-ui/colors/red-dark.css';
 @import '@radix-ui/colors/yellow.css';
 @import '@radix-ui/colors/yellow-dark.css';
+@import '@radix-ui/colors/amber.css';
+@import '@radix-ui/colors/amber-dark.css';
+@import '@radix-ui/colors/orange.css';
+@import '@radix-ui/colors/orange-dark.css';
+@import '@radix-ui/colors/tomato.css';
+@import '@radix-ui/colors/tomato-dark.css';
+@import '@radix-ui/colors/red.css';
+@import '@radix-ui/colors/red-dark.css';
+@import '@radix-ui/colors/ruby.css';
+@import '@radix-ui/colors/ruby-dark.css';
+@import '@radix-ui/colors/crimson.css';
+@import '@radix-ui/colors/crimson-dark.css';
+@import '@radix-ui/colors/pink.css';
+@import '@radix-ui/colors/pink-dark.css';
+@import '@radix-ui/colors/plum.css';
+@import '@radix-ui/colors/plum-dark.css';
+@import '@radix-ui/colors/purple.css';
+@import '@radix-ui/colors/purple-dark.css';
+@import '@radix-ui/colors/violet.css';
+@import '@radix-ui/colors/violet-dark.css';
+@import '@radix-ui/colors/iris.css';
+@import '@radix-ui/colors/iris-dark.css';
+@import '@radix-ui/colors/indigo.css';
+@import '@radix-ui/colors/indigo-dark.css';
+@import '@radix-ui/colors/blue.css';
+@import '@radix-ui/colors/blue-dark.css';
+@import '@radix-ui/colors/cyan.css';
+@import '@radix-ui/colors/cyan-dark.css';
+@import '@radix-ui/colors/teal.css';
+@import '@radix-ui/colors/teal-dark.css';
+@import '@radix-ui/colors/jade.css';
+@import '@radix-ui/colors/jade-dark.css';
 @import '@radix-ui/colors/green.css';
 @import '@radix-ui/colors/green-dark.css';
+@import '@radix-ui/colors/grass.css';
+@import '@radix-ui/colors/grass-dark.css';
+@import '@radix-ui/colors/lime.css';
+@import '@radix-ui/colors/lime-dark.css';
+@import '@radix-ui/colors/mint.css';
+@import '@radix-ui/colors/mint-dark.css';
+@import '@radix-ui/colors/sky.css';
+@import '@radix-ui/colors/sky-dark.css';
 @import '@radix-ui/colors/black-alpha.css';
 @import '@radix-ui/colors/white-alpha.css';
 
@@ -163,21 +199,6 @@ Steps 11 and 12 are designed for text.
 }
 
 :root {
-  --red-base: var(--red-1);
-  --red-bg-subtle: var(--red-2);
-  --red-bg: var(--red-3);
-  --red-bg-hover: var(--red-4);
-  --red-bg-active: var(--red-5);
-  --red-line: var(--red-6);
-  --red-border: var(--red-7);
-  --red-border-strong: var(--red-8);
-  --red-solid: var(--red-9);
-  --red-solid-strong: var(--red-10);
-  --red-text: var(--red-11);
-  --red-text-strong: var(--red-12);
-}
-
-:root {
   --yellow-base: var(--yellow-1);
   --yellow-bg-subtle: var(--yellow-2);
   --yellow-bg: var(--yellow-3);
@@ -193,6 +214,246 @@ Steps 11 and 12 are designed for text.
 }
 
 :root {
+  --amber-base: var(--amber-1);
+  --amber-bg-subtle: var(--amber-2);
+  --amber-bg: var(--amber-3);
+  --amber-bg-hover: var(--amber-4);
+  --amber-bg-active: var(--amber-5);
+  --amber-line: var(--amber-6);
+  --amber-border: var(--amber-7);
+  --amber-border-strong: var(--amber-8);
+  --amber-solid: var(--amber-9);
+  --amber-solid-strong: var(--amber-10);
+  --amber-text: var(--amber-11);
+  --amber-text-strong: var(--amber-12);
+}
+
+:root {
+  --orange-base: var(--orange-1);
+  --orange-bg-subtle: var(--orange-2);
+  --orange-bg: var(--orange-3);
+  --orange-bg-hover: var(--orange-4);
+  --orange-bg-active: var(--orange-5);
+  --orange-line: var(--orange-6);
+  --orange-border: var(--orange-7);
+  --orange-border-strong: var(--orange-8);
+  --orange-solid: var(--orange-9);
+  --orange-solid-strong: var(--orange-10);
+  --orange-text: var(--orange-11);
+  --orange-text-strong: var(--orange-12);
+}
+
+:root {
+  --tomato-base: var(--tomato-1);
+  --tomato-bg-subtle: var(--tomato-2);
+  --tomato-bg: var(--tomato-3);
+  --tomato-bg-hover: var(--tomato-4);
+  --tomato-bg-active: var(--tomato-5);
+  --tomato-line: var(--tomato-6);
+  --tomato-border: var(--tomato-7);
+  --tomato-border-strong: var(--tomato-8);
+  --tomato-solid: var(--tomato-9);
+  --tomato-solid-strong: var(--tomato-10);
+  --tomato-text: var(--tomato-11);
+  --tomato-text-strong: var(--tomato-12);
+}
+
+:root {
+  --red-base: var(--red-1);
+  --red-bg-subtle: var(--red-2);
+  --red-bg: var(--red-3);
+  --red-bg-hover: var(--red-4);
+  --red-bg-active: var(--red-5);
+  --red-line: var(--red-6);
+  --red-border: var(--red-7);
+  --red-border-strong: var(--red-8);
+  --red-solid: var(--red-9);
+  --red-solid-strong: var(--red-10);
+  --red-text: var(--red-11);
+  --red-text-strong: var(--red-12);
+}
+
+:root {
+  --ruby-base: var(--ruby-1);
+  --ruby-bg-subtle: var(--ruby-2);
+  --ruby-bg: var(--ruby-3);
+  --ruby-bg-hover: var(--ruby-4);
+  --ruby-bg-active: var(--ruby-5);
+  --ruby-line: var(--ruby-6);
+  --ruby-border: var(--ruby-7);
+  --ruby-border-strong: var(--ruby-8);
+  --ruby-solid: var(--ruby-9);
+  --ruby-solid-strong: var(--ruby-10);
+  --ruby-text: var(--ruby-11);
+  --ruby-text-strong: var(--ruby-12);
+}
+
+:root {
+  --crimson-base: var(--crimson-1);
+  --crimson-bg-subtle: var(--crimson-2);
+  --crimson-bg: var(--crimson-3);
+  --crimson-bg-hover: var(--crimson-4);
+  --crimson-bg-active: var(--crimson-5);
+  --crimson-line: var(--crimson-6);
+  --crimson-border: var(--crimson-7);
+  --crimson-border-strong: var(--crimson-8);
+  --crimson-solid: var(--crimson-9);
+  --crimson-solid-strong: var(--crimson-10);
+  --crimson-text: var(--crimson-11);
+  --crimson-text-strong: var(--crimson-12);
+}
+
+:root {
+  --pink-base: var(--pink-1);
+  --pink-bg-subtle: var(--pink-2);
+  --pink-bg: var(--pink-3);
+  --pink-bg-hover: var(--pink-4);
+  --pink-bg-active: var(--pink-5);
+  --pink-line: var(--pink-6);
+  --pink-border: var(--pink-7);
+  --pink-border-strong: var(--pink-8);
+  --pink-solid: var(--pink-9);
+  --pink-solid-strong: var(--pink-10);
+  --pink-text: var(--pink-11);
+  --pink-text-strong: var(--pink-12);
+}
+
+:root {
+  --plum-base: var(--plum-1);
+  --plum-bg-subtle: var(--plum-2);
+  --plum-bg: var(--plum-3);
+  --plum-bg-hover: var(--plum-4);
+  --plum-bg-active: var(--plum-5);
+  --plum-line: var(--plum-6);
+  --plum-border: var(--plum-7);
+  --plum-border-strong: var(--plum-8);
+  --plum-solid: var(--plum-9);
+  --plum-solid-strong: var(--plum-10);
+  --plum-text: var(--plum-11);
+  --plum-text-strong: var(--plum-12);
+}
+
+:root {
+  --purple-base: var(--purple-1);
+  --purple-bg-subtle: var(--purple-2);
+  --purple-bg: var(--purple-3);
+  --purple-bg-hover: var(--purple-4);
+  --purple-bg-active: var(--purple-5);
+  --purple-line: var(--purple-6);
+  --purple-border: var(--purple-7);
+  --purple-border-strong: var(--purple-8);
+  --purple-solid: var(--purple-9);
+  --purple-solid-strong: var(--purple-10);
+  --purple-text: var(--purple-11);
+  --purple-text-strong: var(--purple-12);
+}
+
+:root {
+  --violet-base: var(--violet-1);
+  --violet-bg-subtle: var(--violet-2);
+  --violet-bg: var(--violet-3);
+  --violet-bg-hover: var(--violet-4);
+  --violet-bg-active: var(--violet-5);
+  --violet-line: var(--violet-6);
+  --violet-border: var(--violet-7);
+  --violet-border-strong: var(--violet-8);
+  --violet-solid: var(--violet-9);
+  --violet-solid-strong: var(--violet-10);
+  --violet-text: var(--violet-11);
+  --violet-text-strong: var(--violet-12);
+}
+
+:root {
+  --iris-base: var(--iris-1);
+  --iris-bg-subtle: var(--iris-2);
+  --iris-bg: var(--iris-3);
+  --iris-bg-hover: var(--iris-4);
+  --iris-bg-active: var(--iris-5);
+  --iris-line: var(--iris-6);
+  --iris-border: var(--iris-7);
+  --iris-border-strong: var(--iris-8);
+  --iris-solid: var(--iris-9);
+  --iris-solid-strong: var(--iris-10);
+  --iris-text: var(--iris-11);
+  --iris-text-strong: var(--iris-12);
+}
+
+:root {
+  --indigo-base: var(--indigo-1);
+  --indigo-bg-subtle: var(--indigo-2);
+  --indigo-bg: var(--indigo-3);
+  --indigo-bg-hover: var(--indigo-4);
+  --indigo-bg-active: var(--indigo-5);
+  --indigo-line: var(--indigo-6);
+  --indigo-border: var(--indigo-7);
+  --indigo-border-strong: var(--indigo-8);
+  --indigo-solid: var(--indigo-9);
+  --indigo-solid-strong: var(--indigo-10);
+  --indigo-text: var(--indigo-11);
+  --indigo-text-strong: var(--indigo-12);
+}
+
+:root {
+  --blue-base: var(--blue-1);
+  --blue-bg-subtle: var(--blue-2);
+  --blue-bg: var(--blue-3);
+  --blue-bg-hover: var(--blue-4);
+  --blue-bg-active: var(--blue-5);
+  --blue-line: var(--blue-6);
+  --blue-border: var(--blue-7);
+  --blue-border-strong: var(--blue-8);
+  --blue-solid: var(--blue-9);
+  --blue-solid-strong: var(--blue-10);
+  --blue-text: var(--blue-11);
+  --blue-text-strong: var(--blue-12);
+}
+
+:root {
+  --cyan-base: var(--cyan-1);
+  --cyan-bg-subtle: var(--cyan-2);
+  --cyan-bg: var(--cyan-3);
+  --cyan-bg-hover: var(--cyan-4);
+  --cyan-bg-active: var(--cyan-5);
+  --cyan-line: var(--cyan-6);
+  --cyan-border: var(--cyan-7);
+  --cyan-border-strong: var(--cyan-8);
+  --cyan-solid: var(--cyan-9);
+  --cyan-solid-strong: var(--cyan-10);
+  --cyan-text: var(--cyan-11);
+  --cyan-text-strong: var(--cyan-12);
+}
+
+:root {
+  --teal-base: var(--teal-1);
+  --teal-bg-subtle: var(--teal-2);
+  --teal-bg: var(--teal-3);
+  --teal-bg-hover: var(--teal-4);
+  --teal-bg-active: var(--teal-5);
+  --teal-line: var(--teal-6);
+  --teal-border: var(--teal-7);
+  --teal-border-strong: var(--teal-8);
+  --teal-solid: var(--teal-9);
+  --teal-solid-strong: var(--teal-10);
+  --teal-text: var(--teal-11);
+  --teal-text-strong: var(--teal-12);
+}
+
+:root {
+  --jade-base: var(--jade-1);
+  --jade-bg-subtle: var(--jade-2);
+  --jade-bg: var(--jade-3);
+  --jade-bg-hover: var(--jade-4);
+  --jade-bg-active: var(--jade-5);
+  --jade-line: var(--jade-6);
+  --jade-border: var(--jade-7);
+  --jade-border-strong: var(--jade-8);
+  --jade-solid: var(--jade-9);
+  --jade-solid-strong: var(--jade-10);
+  --jade-text: var(--jade-11);
+  --jade-text-strong: var(--jade-12);
+}
+
+:root {
   --green-base: var(--green-1);
   --green-bg-subtle: var(--green-2);
   --green-bg: var(--green-3);
@@ -205,4 +466,64 @@ Steps 11 and 12 are designed for text.
   --green-solid-strong: var(--green-10);
   --green-text: var(--green-11);
   --green-text-strong: var(--green-12);
+}
+
+:root {
+  --grass-base: var(--grass-1);
+  --grass-bg-subtle: var(--grass-2);
+  --grass-bg: var(--grass-3);
+  --grass-bg-hover: var(--grass-4);
+  --grass-bg-active: var(--grass-5);
+  --grass-line: var(--grass-6);
+  --grass-border: var(--grass-7);
+  --grass-border-strong: var(--grass-8);
+  --grass-solid: var(--grass-9);
+  --grass-solid-strong: var(--grass-10);
+  --grass-text: var(--grass-11);
+  --grass-text-strong: var(--grass-12);
+}
+
+:root {
+  --lime-base: var(--lime-1);
+  --lime-bg-subtle: var(--lime-2);
+  --lime-bg: var(--lime-3);
+  --lime-bg-hover: var(--lime-4);
+  --lime-bg-active: var(--lime-5);
+  --lime-line: var(--lime-6);
+  --lime-border: var(--lime-7);
+  --lime-border-strong: var(--lime-8);
+  --lime-solid: var(--lime-9);
+  --lime-solid-strong: var(--lime-10);
+  --lime-text: var(--lime-11);
+  --lime-text-strong: var(--lime-12);
+}
+
+:root {
+  --mint-base: var(--mint-1);
+  --mint-bg-subtle: var(--mint-2);
+  --mint-bg: var(--mint-3);
+  --mint-bg-hover: var(--mint-4);
+  --mint-bg-active: var(--mint-5);
+  --mint-line: var(--mint-6);
+  --mint-border: var(--mint-7);
+  --mint-border-strong: var(--mint-8);
+  --mint-solid: var(--mint-9);
+  --mint-solid-strong: var(--mint-10);
+  --mint-text: var(--mint-11);
+  --mint-text-strong: var(--mint-12);
+}
+
+:root {
+  --sky-base: var(--sky-1);
+  --sky-bg-subtle: var(--sky-2);
+  --sky-bg: var(--sky-3);
+  --sky-bg-hover: var(--sky-4);
+  --sky-bg-active: var(--sky-5);
+  --sky-line: var(--sky-6);
+  --sky-border: var(--sky-7);
+  --sky-border-strong: var(--sky-8);
+  --sky-solid: var(--sky-9);
+  --sky-solid-strong: var(--sky-10);
+  --sky-text: var(--sky-11);
+  --sky-text-strong: var(--sky-12);
 }
